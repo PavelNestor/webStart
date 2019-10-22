@@ -1,4 +1,6 @@
-- compress images https://compressor.io/
+- compress images: https://compressor.io/
+- convert to webp: https://image.online-convert.com/ru/convert-to-webp
 - fill open graph meta tags (partials/head.pug)
 - fill or remove keywords & description meta tags (partials/head.pug)
 - favicon https://https://realfavicongenerator.net/
+- AOS add for animation on scroll
