@@ -1,0 +1,203 @@
+// BUTTONS
+button, .btn, input[type="button"]
+  border: none
+  background: none
+  cursor: pointer
+  display: inline-block
+  // background-color: $color_accent
+  padding: 0.6em 1.2em
+  line-height: 1em
+  transition: background 100ms
+  white-space: nowrap
+  text-overflow: ellipsis
+  overflow: hidden
+
+  &.focus, &:focus, &:hover, &:active
+    text-decoration: none
+    // background-color: $color_primary
+
+  &:active, &:focus
+    outline: none
+// END BUTTONS
+
+// FORM
+.form-group
+  position: relative
+
+  &.error
+    .error-label
+      // display: block
+      opacity: 1
+      transition: opacity .3s
+
+  &.error
+    .input-line
+      background: #f41f52
+      width: 100%
+
+  .input-holder
+    &:after
+      background: #f41f52
+
+  .error-label
+    color: #f41f52
+    font-size: 1.3rem
+    font-weight: 400
+    line-height: 1.9rem
+    opacity: 0
+    position: absolute
+    right: 0
+    bottom: -2.1rem
+    transition: opacity .3s
+    display: none
+// END FORM
+
+// CHECKBOX
+.checkbox input[type="checkbox"]
+  &:not(:checked), &:checked
+    left: -9999rem
+    position: absolute
+
+  &:not(:checked) + label, &:checked + label
+    cursor: pointer
+    position: relative
+    padding-left: 3.6rem
+
+  &:not(:checked) + label:before, &:checked + label:before
+    background: #eee
+    content: ''
+    border: 1px solid #383838
+    left: 0
+    top: 0.2rem
+    position: absolute
+    width: 1.7rem
+    height: 1.7rem
+
+  &:not(:checked) + label:after, &:checked + label:after
+    border: 2px solid #000
+    border-left-color: transparent
+    border-top-color: transparent
+    content: ''
+    color: #000
+    position: absolute
+    top: 0.2rem
+    left: 0.7rem
+    font-size: 1.8rem
+    transition: all .2s
+    height: 0.10rem
+    width: 0.3rem
+
+  &:not(:checked) + label:after
+    opacity: 0
+    transform: rotate(-90deg) scale(0)
+
+  &:checked + label:after
+    opacity: 1
+    transform: rotate(40deg) scale(1)
+
+  &:disabled
+    &:not(:checked) + label:before
+      box-shadow: none
+      border-color: #bbb
+      background-color: #ddd
+
+    &:checked + label
+      &:before
+        box-shadow: none
+        border-color: #bbb
+        background-color: #ddd
+
+      &:after
+        color: #999
+
+    + label
+      color: #aaa
+
+  &:checked:focus + label:before, &:not(:checked):focus + label:before
+    border: 1px solid #777
+// END CHECKBOX
+
+// RADIO
+.radio input[type="radio"]
+  &:not(:checked), &:checked
+    left: -9999rem
+    position: absolute
+
+  &:not(:checked) + label, &:checked + label
+    cursor: pointer
+    position: relative
+    padding-left: 3.9rem
+
+  &:not(:checked) + label:before, &:checked + label:before
+    //background: #eee
+    border-radius: 50%
+    border: 2px solid #000
+    content: ''
+    left: 0
+    top: 0.2rem
+    position: absolute
+    width: 1.8rem
+    height: 1.8rem
+
+  &:not(:checked) + label:after, &:checked + label:after
+    content: ''
+    background-color: #000
+    border-radius: 50%
+    position: absolute
+    top: 0.7rem
+    left: 0.5rem
+    width: 1.2rem
+    height: 1.2rem
+    transition: all .2s
+
+  &:not(:checked) + label:after
+    opacity: 0
+    transform: scale(0)
+
+  &:checked + label:after
+    opacity: 1
+    transform: scale(1)
+
+  &:disabled
+    &:not(:checked) + label:before
+      box-shadow: none
+      border-color: #bbb
+      background-color: #ddd
+
+    &:checked + label
+      &:before
+        box-shadow: none
+        border-color: #bbb
+        background-color: #ddd
+
+      &:after
+        color: #999
+
+    + label
+      color: #aaa
+  //&:checked:focus + label:before, &:not(:checked):focus + label:before
+    //border: 2px solid #777
+  //&:checked:focus + label:after, &:not(:checked):focus + label:after
+// END RADIO
+
+//	INPUT FILE
+.input-file
+  cursor: pointer
+  position: relative
+
+  label
+    cursor: pointer
+    display: block
+    transition: all .4s
+
+  input
+    cursor: pointer
+    display: inline-block
+    left: 0
+    opacity: 0.01
+    padding: 0
+    pointer-events: none
+    position: absolute
+    top: 0
+    //&:hover + label, &:focus + label
+//	END INPUT FILE

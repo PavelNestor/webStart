@@ -1,0 +1,28 @@
+doctype html
+
+- var title = 'Template';
+
+html(lang='en')
+  block vars
+  head
+    title #{title}
+    block head
+      include head
+
+  body(class= bodyClass)
+    block noscript
+      include noscript
+
+    block menu
+      include menu
+
+    block content
+
+    block footer
+      include footer
+
+    block modals
+      include modals
+
+  block scripts
+    include scripts

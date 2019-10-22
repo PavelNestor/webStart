@@ -1,0 +1,15 @@
+$fonts-root: '../fonts/'
+
+// http://www.font2web.com/
+@mixin add-font ($name, $path, $style, $weight)
+  @font-face
+    font-family: $name
+    src: url($fonts-root + $path + ".eot")
+    src: url($fonts-root + $path + ".eot?#iefix")format("embedded-opentype"), url($fonts-root + $path + ".woff") format("woff"), url($fonts-root + $path + ".ttf") format("truetype")
+    font-style: $style
+    font-weight: $weight
+
+
+// @include add-font ("Montserrat", "Montserrat-Regular", normal, 400 )
+// @include add-font ("Montserrat-Bold", "Montserrat-Bold", normal, 700 )
+// @include add-font ("Montserrat-Light", "Montserrat-Light", normal, 300 )

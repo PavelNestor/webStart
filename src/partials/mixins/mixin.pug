@@ -1,0 +1,11 @@
+mixin pictureJpg(path, alt='')
+  picture.cover(class!=attributes.class)
+    source.cover(srcset=`${path}.webp` type="image/webp" alt= alt)
+    source.cover(srcset=`${path}.jpg` type="image/jpeg" alt= alt)
+    img.cover(srcset=`${path}.jpg` alt= alt)
+
+mixin picturePng(path, alt='')
+  picture.cover(class!=attributes.class)
+    source.cover(srcset=`${path}.webp` type="image/webp" alt= alt class!=attributes.class)
+    source.cover(srcset=`${path}.png` type="image/jpeg" alt= alt class!=attributes.class)
+    img.cover(srcset=`${path}.png` alt= alt class!=attributes.class)

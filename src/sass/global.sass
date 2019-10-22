@@ -1,0 +1,242 @@
+*
+  box-sizing: border-box
+
+html
+  color: $color_primary
+  font-size: 8px
+  font-family: Montserrat
+
+  @media #{$media-xxs-up}
+    font-size: 10px
+
+  @media #{$media-uhd-up}
+    font-size: 20px
+
+body
+  font: $font
+  margin: 0
+  font-smoothing: antialiased
+  tap-highlight-color: transparent
+
+  &.fixed
+    overflow: hidden
+
+    &.client-ios
+      position: fixed
+      height: 100%
+      width: 100%
+
+section
+
+a
+  border: none
+  outline: none
+  // color: $color_primary
+  text-decoration: none
+
+p
+  font-size: 2rem
+  line-height: 2.5rem
+
+span
+
+img
+  border: none
+  outline: none
+  width: auto
+  height: 100%
+  vertical-align: middle
+
+
+picture
+  object-fit: cover
+
+.cover
+  width: 100%
+  height: 100%
+  object-fit: cover
+
+ul
+  padding: 0
+
+  li
+    list-style: none
+
+  &.list-inline
+    & > li
+      display: inline-block
+
+h1, h2, h3, h4, h5, h6
+  &:first-child
+    margin-top: 0
+
+h1
+h2
+h3
+h4
+h5
+h6
+
+hr
+  border: 0
+  display: block
+  border-top: 1px solid $color_primary
+  height: 1px
+  margin-top: 1rem
+  margin-bottom: 1rem
+  clear: both
+
+label
+  border-radius: 0
+
+button, input, select, textarea, a
+  font: $font
+  font-size: 1rem
+
+  &:focus,
+  &:active
+    outline-color: $color_primary
+
+//	SELECT
+select
+  appearance: none
+  border: 1px solid $color_primary
+  outline-color: $color_primary
+
+  &:-moz-focusring
+    color: transparent
+    text-shadow: none
+//	END SELECT
+
+// INPUTS & TEXTAREA
+input,
+textarea
+  outline-color: $color_primary
+  font: $font
+  color: $color_primary
+  font-size: 1rem
+
+  &::placeholder
+    font: $font
+
+textarea
+
+input
+  appearance: none
+
+input[type='number']
+  &::-webkit-outer-spin-button, &::-webkit-inner-spin-button
+    -webkit-appearance: none
+  -moz-appearance: textfield
+//	END INPUTS & TEXTAREA
+
+
+// GRID
+.container
+  overflow: hidden
+  margin: 0 auto
+  width: 80%
+
+  @media #{$media-sm}
+    padding-left: 1rem
+    padding-right: 1rem
+    width: 100%
+
+.hidden
+  display: none !important
+
+.sm-hidden
+  @media #{$media-sm}
+    display: none !important
+
+.xs-hidden
+  @media #{$media-xs}
+    display: none !important
+
+// image-holder
+.image-holder
+  overflow: hidden
+  position: relative
+  text-align: center
+  vertical-align: middle
+
+  img
+    object-fit: cover
+    vertical-align: middle
+    height: 100%
+    width: 100%
+
+  .fake-img
+    opacity: 0
+    position: relative
+    height: 100%
+    width: 100%
+    z-index: 1
+
+  .img
+    background:
+    position: 50% 50%
+    repeat: no-repeat
+    size: cover
+    height: 100%
+    position: absolute
+    left: 0
+    right: 0
+    top: 0
+
+.table-holder
+  max-width: 100%
+  overflow: auto
+
+.flex-vertical
+  display: flex
+  height: 100%
+  flex-flow: row wrap
+  align-items: center
+  justify-content: center
+
+//	MARKUP
+.align-center,
+.text-center
+  text-align: center
+
+.align-right,
+.text-right
+  text-align: right
+
+.align-left,
+.text-left
+  text-align: left !important
+
+.pull-left
+  float: left
+.pull-right
+  float: right
+
+.nowrap
+  white-space: nowrap
+
+.clearfix
+  &:before,
+  &:after
+    content: ''
+    height: 0
+    display: table
+    clear: both
+
+.list
+  margin: 0
+
+  &__item
+    background: url(/img/icons/list-img.svg) no-repeat left 1px
+    font-size: 1.4rem
+    line-height: 1.4em
+    margin-bottom: 1.2rem
+    margin-left: -0.1rem
+    padding-left: 3.2rem
+    color: $color_primary
+
+    @media #{$media-sm-plus-up}
+      margin-left: 0.5rem
+      margin-bottom: 1.1rem
+

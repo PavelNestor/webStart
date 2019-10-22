@@ -1,0 +1,202 @@
+@mixin max-lines ($lines:1, $line-height: $line-height)
+  max-height: $line-height * $lines
+  overflow: hidden
+
+@mixin height-lines ($lines:1, $line-height: $line-height)
+  height: $line-height * $lines
+  overflow: hidden
+
+//== Media queries breakpoints
+
+// Extra small screen / phone
+$screen-xxs:                 375px
+$screen-xs:                  640px
+$screen-xs-min:              $screen-xs
+$screen-phone:               $screen-xs-min
+
+// Small screen / tablet
+$screen-sm:                  800px
+$screen-sm-min:              $screen-sm
+$screen-tablet:              $screen-sm-min
+
+$screen-sm-plus:             1024px
+$screen-sm-plus-min:         $screen-sm
+
+// Medium screen / desktop
+$screen-md:                  1200px
+$screen-md-min:              $screen-md
+$screen-desktop:             $screen-md-min
+
+// Large screen / wide desktop
+$screen-lg:                  1440px
+$screen-lg-min:              $screen-lg
+
+// Ultra screen / wide desktop
+$screen-uhd:                  1980px
+$screen-uhd-min:              $screen-uhd
+
+
+$screen-xs-max:              ($screen-sm-min - 1)
+$screen-sm-max:              ($screen-sm-plus-min - 1)
+$screen-sm-plus-max:         ($screen-md-min - 1)
+$screen-md-max:              ($screen-lg-min - 1)
+$screen-lg-max:              ($screen-uhd-min - 1)
+
+
+$media-uhd-up: '(min-width: $screen-uhd)'
+$media-uhd: #{$media-uhd-up}
+
+$media-lg-down: '(max-width: $screen-lg-max)'
+$media-lg: #{$media-lg-down}
+$media-lg-up: '(min-width: #{$screen-lg})'
+$media-lg-only: '(min-width: $screen-lg) and (max-width: $screen-lg-max)'
+
+$media-md-down: '(max-width: $screen-md-max)'
+$media-md: #{$media-md-down}
+$media-md-up: '(min-width: $screen-md)'
+$media-md-only: '(min-width: $screen-md) and (max-width: $screen-md-max)'
+
+$media-md-sm: '(min-width: $screen-sm) and (max-width: $screen-md-max)'
+
+$media-sm-down: '(max-width: $screen-sm-max)'
+$media-sm: #{$media-sm-down}
+$media-sm-up: '(min-width: #{$screen-sm})'
+$media-sm-only: '(min-width: $screen-sm) and (max-width: $screen-sm-max)'
+
+$media-sm-plus-down: '(max-width: #{$screen-sm-plus-max})'
+$media-sm-plus: #{$media-sm-plus-down}
+$media-sm-plus-up: '(min-width: #{$screen-sm-plus})'
+$media-sm-plus-only: '(min-width: $screen-sm-plus) and (max-width: $screen-sm-plus-max)'
+
+$media-xs-down: '(max-width: #{$screen-xs-max})'
+$media-xs: #{$media-xs-down}
+$media-xs-up: '(min-width: #{$screen-xs})'
+$media-xxs-up: '(min-width: #{$screen-xxs})'
+
+$grid-gap: 2rem
+
+// grid
+%flex-middle
+  align-items: center
+  display: flex
+  flex-direction: column
+  justify-content: center
+  padding-top: $grid-gap
+  padding-bottom: $grid-gap
+  min-height: 100vh
+
+%col
+  &
+    margin: 0 (-$grid-gap)
+    font-size: 0
+  & > *
+    display: inline-block
+    font-size: 1rem
+    padding: 0 $grid-gap
+    vertical-align: top
+
+%vertical-middle
+  & > *
+    vertical-align: middle
+
+%scrollbar
+  &::-webkit-scrollbar
+    height: 1rem
+    width: 1rem
+    background-color: #fff
+  &::-webkit-scrollbar-thumb
+    background-color: #d1d1d1
+    border-radius: 1rem
+
+%col-2
+  @extend %col
+  & > *
+    width: 50%
+%col-3
+  @extend %col
+  & > *
+    width: 33.3%
+%col-4
+  @extend %col
+  & > *
+    width: 25%
+%col-5
+  @extend %col
+  & > *
+    width: 20%
+%col-6
+  @extend %col
+  & > *
+    width: 16%
+%col-7
+  @extend %col
+  & > *
+    width: 14%
+%col-8
+  @extend %col
+  & > *
+    width: 12.5%
+%col-9
+  @extend %col
+  & > *
+    width: 20%
+%col-10
+  @extend %col
+  & > *
+    width: 20%
+%col-11
+  @extend %col
+  & > *
+    width: 20%
+%col-12
+  @extend %col
+  & > *
+    width: 20%
+
+%sm-col-1
+  @extend %col
+  @media #{$media-sm}
+    & > *
+      width: 100%
+%sm-col-2
+  @extend %col
+  @media #{$media-sm}
+    & > *
+      width: 50%
+%sm-col-3
+  @extend %col
+  @media #{$media-sm}
+    & > *
+      width: 33.3%
+%sm-col-4
+  @extend %col
+  @media #{$media-sm}
+    & > *
+      width: 20%
+
+%xs-col-1
+  @extend %col
+  @media #{$media-xs}
+    & > *
+      width: 100%
+%xs-col-2
+  @extend %col
+  @media #{$media-xs}
+    & > *
+      width: 50%
+%xs-col-3
+  @extend %col
+  @media #{$media-xs}
+    & > *
+      width: 33.3%
+%xs-col-4
+  @extend %col
+  @media #{$media-xs}
+    & > *
+      width: 25%
+
+// EXAMPLE
+// .some-class
+// 	@extend %col-3
+// 	@extend %sm-col-2
+// 	@extend %xs-col-1
