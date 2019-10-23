@@ -1,14 +1,33 @@
 {
   "name": "web-start",
   "version": "1.0.0",
-  "description": "",
+  "description": "Web start - pug, sass, js, gulp, babel template",
   "main": "gulpfile.babel.js",
   "scripts": {
     "start": "gulp dev --mode development",
     "build": "gulp dev --mode production"
   },
-  "author": "PavelNestor",
+  "author": {
+    "name": "PavelNestor",
+    "email": "nestorpaveldev@gmail.com"
+  },
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PavelNestor/webStart"
+  },
+  "homepage": "http://nestor.studio/",
+  "keywords": [
+    "web",
+    "HTML",
+    "CSS",
+    "pug",
+    "sass",
+    "JavaScript",
+    "js",
+    "gulp",
+    "babel"
+  ],
   "devDependencies": {
     "@babel/core": "7.6.4",
     "@babel/preset-env": "7.6.3",
