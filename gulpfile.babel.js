@@ -71,7 +71,10 @@ export const sync = () => {
 
 // Scripts
 export const scripts = () => src(paths.src.js, { sourcemaps: true })
-  .pipe(webpack())
+  .pipe(webpack({
+    output: { filename: 'bundle.js' },
+    mode: 'development'
+  }))
   .pipe(babel())
   .pipe(outputUglify)
   .pipe(concat('main.min.js'))
